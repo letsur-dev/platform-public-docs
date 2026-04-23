@@ -1,6 +1,6 @@
 # API 사용 가이드
 
-Letsur API는 **하나의 진입점으로 여러 AI 공급사의 모델**을 호출할 수 있는 서비스입니다. OpenAI SDK·Anthropic SDK·Claude Code 등 기존에 쓰시던 클라이언트에서 **`base_url`과 키만 바꾸면** 그대로 동작합니다.
+Letsur API는 **하나의 진입점으로 여러 AI 공급사의 모델**을 호출할 수 있는 서비스입니다. OpenAI SDK·Anthropic SDK 등 기존에 쓰시던 클라이언트에서 **`base_url`과 키만 바꾸면** 그대로 동작합니다.
 
 ## 시작하기 전에
 
@@ -11,17 +11,17 @@ Letsur API는 **하나의 진입점으로 여러 AI 공급사의 모델**을 호
 
 ---
 
-## 1. OpenAI 호환으로 호출하기
+## 1. OpenAI Chat Completions 호환
 
-가장 일반적인 사용 방식입니다. `POST /v1/chat/completions` 로 OpenAI 스펙 그대로 호출합니다.
+`POST /v1/chat/completions` — 가장 일반적인 사용 방식입니다.
 
 ### curl
 
 ```bash
-export LETSUR_API_KEY="sk-..."
+export GATEWAY_API_KEY="sk-..."
 
 curl https://gw.letsur.ai/v1/chat/completions \
-  -H "Authorization: Bearer $LETSUR_API_KEY" \
+  -H "Authorization: Bearer $GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "claude-sonnet-4-6",
@@ -38,7 +38,7 @@ import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key=os.environ["LETSUR_API_KEY"],
+    api_key=os.environ["GATEWAY_API_KEY"],
     base_url="https://gw.letsur.ai/v1",
 )
 
@@ -47,26 +47,57 @@ response = client.chat.completions.create(
     messages=[{"role": "user", "content": "안녕하세요"}],
 )
 
+# LLM이 생성한 텍스트
 print(response.choices[0].message.content)
-print(response.model_dump().get("estimated_cost"))
 ```
 
-**핵심 포인트**
+### 응답 예시
+
+```json
+{
+  "id": "chatcmpl-...",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "안녕하세요! 무엇을 도와드릴까요?"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 21,
+    "completion_tokens": 38,
+    "total_tokens": 59
+  },
+  "estimated_cost": {
+    "amount": "0.00120000",
+    "currency": "USD",
+    "disclaimer": "Estimated based on published pricing. Actual charges may differ."
+  }
+}
+```
+
+LLM이 생성한 텍스트는 **`choices[0].message.content`** 에 있습니다.
+
+### 핵심 포인트
+
 - 공급사 prefix(`openai/`, `anthropic/`) **불필요** — 카탈로그의 모델 코드를 그대로 사용
 - 공급사 전환은 `model` 필드 값만 바꾸면 됨
 - `stream: true` 스트리밍 지원. `stream_options.include_usage: true` 시 마지막 직전 청크에 `usage`와 `estimated_cost` 포함
 
 ---
 
-## 2. Anthropic 네이티브로 호출하기
+## 2. Anthropic Messages 네이티브
 
-Claude Code나 Anthropic SDK를 사용 중이라면 `/v1/messages` 엔드포인트를 그대로 쓸 수 있습니다.
+`POST /v1/messages` — Anthropic SDK를 그대로 붙일 수 있습니다.
 
 ### curl
 
 ```bash
 curl https://gw.letsur.ai/v1/messages \
-  -H "x-api-key: $LETSUR_API_KEY" \
+  -H "x-api-key: $GATEWAY_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
   -H "Content-Type: application/json" \
   -d '{
@@ -76,20 +107,146 @@ curl https://gw.letsur.ai/v1/messages \
   }'
 ```
 
-### Claude Code
+### Python (Anthropic SDK)
 
-환경 변수만 설정하면 Claude Code가 Letsur Gateway를 통해 동작합니다.
+```python
+import os
+from anthropic import Anthropic
 
-```bash
-export ANTHROPIC_BASE_URL="https://gw.letsur.ai"
-export ANTHROPIC_API_KEY="$LETSUR_API_KEY"
+client = Anthropic(
+    api_key=os.environ["GATEWAY_API_KEY"],
+    base_url="https://gw.letsur.ai",
+)
+
+message = client.messages.create(
+    model="claude-sonnet-4-6",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "안녕하세요"}],
+)
+
+# LLM이 생성한 텍스트
+print(message.content[0].text)
 ```
 
-> Anthropic 스펙은 `base_url`에 `/v1` 을 포함하지 않습니다 (Anthropic SDK 관례).
+### TypeScript (Anthropic SDK)
+
+```typescript
+import Anthropic from "@anthropic-ai/sdk";
+
+const client = new Anthropic({
+  apiKey: process.env.GATEWAY_API_KEY,
+  baseURL: "https://gw.letsur.ai",
+});
+
+const message = await client.messages.create({
+  model: "claude-sonnet-4-6",
+  max_tokens: 1024,
+  messages: [{ role: "user", content: "안녕하세요" }],
+});
+
+console.log(message.content[0].text);
+```
+
+### 응답 예시
+
+```json
+{
+  "id": "msg_...",
+  "type": "message",
+  "role": "assistant",
+  "model": "claude-sonnet-4-6",
+  "content": [
+    {"type": "text", "text": "안녕하세요! 무엇을 도와드릴까요?"}
+  ],
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 10,
+    "output_tokens": 24
+  },
+  "estimated_cost": {
+    "amount": "0.00085000",
+    "currency": "USD",
+    "disclaimer": "Estimated based on published pricing. Actual charges may differ."
+  }
+}
+```
+
+LLM이 생성한 텍스트는 **`content[0].text`** 에 있습니다.
+
+> Anthropic SDK는 `base_url`에 `/v1`을 포함하지 않습니다. SDK가 내부적으로 `/v1/messages` 경로를 붙입니다. `curl`로 직접 호출할 때는 `/v1/messages`를 명시해야 합니다.
 
 ---
 
-## 3. 지원 모델
+## 3. OpenAI Responses API
+
+`POST /v1/responses` — OpenAI의 최신 API. 단일 호출 내 **내장 도구(web search, code interpreter 등)** 사용과 **상태 있는 대화**를 지원합니다. 카탈로그에서 **`mode=responses`** 로 표시된 모델에서 사용 가능합니다.
+
+### Python (OpenAI SDK)
+
+```python
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["GATEWAY_API_KEY"],
+    base_url="https://gw.letsur.ai/v1",
+)
+
+response = client.responses.create(
+    model="gpt-5",  # responses 모드 지원 모델 코드로 교체
+    input="안녕하세요",
+)
+
+# SDK가 제공하는 편의 속성
+print(response.output_text)
+```
+
+### 응답 예시
+
+```json
+{
+  "id": "resp_...",
+  "object": "response",
+  "model": "gpt-5",
+  "output": [
+    {
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        {"type": "output_text", "text": "안녕하세요! 무엇을 도와드릴까요?"}
+      ]
+    }
+  ],
+  "usage": {
+    "input_tokens": 10,
+    "output_tokens": 24,
+    "total_tokens": 34
+  },
+  "estimated_cost": {
+    "amount": "0.00085000",
+    "currency": "USD",
+    "disclaimer": "Estimated based on published pricing. Actual charges may differ."
+  }
+}
+```
+
+LLM이 생성한 텍스트는 **`output[0].content[0].text`** 에 있습니다. OpenAI SDK는 편의를 위해 **`response.output_text`** 속성으로 바로 접근할 수 있습니다.
+
+---
+
+## 4. 엔드포인트별 LLM 출력 위치
+
+JSON 구조가 엔드포인트마다 다르므로, **실제 모델이 생성한 텍스트를 꺼내는 위치**만 표로 정리했습니다.
+
+| 엔드포인트 | 스키마 | LLM 텍스트 경로 | SDK 편의 속성 |
+|---|---|---|---|
+| `/v1/chat/completions` | OpenAI | `choices[0].message.content` | — |
+| `/v1/messages` | Anthropic | `content[0].text` | — |
+| `/v1/responses` | OpenAI Responses | `output[0].content[0].text` | `response.output_text` |
+
+---
+
+## 5. 지원 모델
 
 현재 카탈로그에 다음 공급사의 모델이 등록되어 있습니다.
 
@@ -110,36 +267,24 @@ export ANTHROPIC_API_KEY="$LETSUR_API_KEY"
 
 ```bash
 curl https://gw.letsur.ai/v1/models \
-  -H "Authorization: Bearer $LETSUR_API_KEY"
+  -H "Authorization: Bearer $GATEWAY_API_KEY"
 ```
 
 ---
 
-## 4. 응답에서 확인할 것
+## 6. 응답 공통 필드
 
-```json
-{
-  "id": "chatcmpl-...",
-  "choices": [...],
-  "usage": {
-    "prompt_tokens": 21,
-    "completion_tokens": 38,
-    "total_tokens": 59
-  },
-  "estimated_cost": {
-    "amount": "0.00120000",
-    "currency": "USD",
-    "disclaimer": "Estimated based on published pricing. Actual charges may differ."
-  }
-}
-```
+모든 엔드포인트 응답에 포함되는 공통/확장 필드입니다.
 
-- `usage` — OpenAI 표준 토큰 집계
-- `estimated_cost` — Letsur 확장 필드. **이번 호출의 원가 USD 예상치**이며 실제 청구와 차이가 있을 수 있음
+- **`usage`** — 요청/응답 토큰 집계. 엔드포인트별 필드명이 약간 다름 (`prompt_tokens`/`completion_tokens` vs `input_tokens`/`output_tokens`).
+- **`estimated_cost`** — Letsur 확장 필드. 이번 호출의 원가 USD 예상치.
+  - `amount` — 문자열, 8자리 소수
+  - `currency` — `USD`
+  - `disclaimer` — 실제 청구와 차이 가능 고지
 
 ---
 
-## 5. 에러 형식
+## 7. 에러 형식
 
 에러는 **RFC 7807 Problem Details** 포맷으로 반환됩니다.
 
@@ -166,7 +311,7 @@ curl https://gw.letsur.ai/v1/models \
 
 ---
 
-## 6. 한도와 청구
+## 8. 한도와 청구
 
 - 각 키에는 Admin이 **월 사용 상한**을 설정할 수 있습니다 (키별 안전장치).
 - 초과 시 Gateway가 자동으로 요청을 차단합니다 (`429 usage_limit_exceeded`).
@@ -178,6 +323,7 @@ curl https://gw.letsur.ai/v1/models \
 
 - **Chat Completions** 엔드포인트 상세 스펙 — Reference 문서 참조
 - **Messages (Anthropic 호환)** 엔드포인트 상세 스펙 — Reference 문서 참조
+- **Responses API** 상세 스펙 — Reference 문서 참조
 - **Claude Code / Cursor 연동** — Integrations 가이드 참조
 - **전체 에러 카탈로그** — 에러 코드 Reference 참조
 
