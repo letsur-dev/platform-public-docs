@@ -17,6 +17,7 @@ legal/        이용약관·개인정보 처리방침 등 법적 문서
 ### Legal
 - [`legal/terms-of-service.md`](./legal/terms-of-service.md) — 서비스 이용약관
 - [`legal/privacy-policy.md`](./legal/privacy-policy.md) — 개인정보 처리방침
+- [`legal/subprocessors.md`](./legal/subprocessors.md) — 데이터 처리 위탁 현황
 - [`legal/marketing-consent.md`](./legal/marketing-consent.md) — 마케팅 수신동의
 
 ## 기여
