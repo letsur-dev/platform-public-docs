@@ -234,19 +234,104 @@ LLM이 생성한 텍스트는 **`output[0].content[0].text`** 에 있습니다. 
 
 ---
 
-## 4. 엔드포인트별 LLM 출력 위치
+## 4. 이미지 생성 (나노바나나)
+
+Google Gemini 이미지 생성 모델(`gemini-2.5-flash-image-preview`, `gemini-3-pro-image-preview`)은 **같은 `/v1/chat/completions` 엔드포인트** 로 호출합니다. 모델 코드만 바꾸면 됩니다.
+
+> `gemini-3-pro-image-preview` 는 공급사(Google) 측 불안정성이 있을 수 있으니 참고하세요.
+
+### 텍스트로 이미지 생성 (Text-to-Image)
+
+```python
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["GATEWAY_API_KEY"],
+    base_url="https://gw.letsur.ai/v1",
+)
+
+response = client.chat.completions.create(
+    model="gemini-2.5-flash-image-preview",
+    messages=[
+        {"role": "user", "content": "푸른 하늘 아래 달리는 자동차의 이미지를 만들어줘"}
+    ],
+)
+```
+
+### 이미지 편집 (Image-to-Image)
+
+기존 이미지를 base64 data URL로 넘기면 편집도 가능합니다.
+
+```python
+import base64
+from pathlib import Path
+
+with open("input.png", "rb") as f:
+    b64 = base64.b64encode(f.read()).decode("utf-8")
+
+response = client.chat.completions.create(
+    model="gemini-2.5-flash-image-preview",
+    messages=[{
+        "role": "user",
+        "content": [
+            {"type": "text", "text": "내 자동차가 하늘을 달리도록 편집해줘"},
+            {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}},
+        ],
+    }],
+)
+```
+
+### 응답 예시
+
+표준 Chat Completions 구조에 **`images`** 필드가 추가됩니다 (base64 인코딩된 이미지 배열).
+
+```json
+{
+  "id": "chatcmpl-...",
+  "choices": [
+    {
+      "message": {
+        "role": "assistant",
+        "content": "다음은 생성된 이미지입니다."
+      }
+    }
+  ],
+  "images": [
+    {"image_url": {"url": "data:image/png;base64,iVBORw0KGgo..."}}
+  ]
+}
+```
+
+### 이미지 꺼내기
+
+```python
+import base64
+from io import BytesIO
+from PIL import Image
+
+image_b64 = response.choices[-1].message.images[0]["image_url"]["url"]
+_, b64_data = image_b64.split(",", 1)
+image = Image.open(BytesIO(base64.b64decode(b64_data)))
+image.show()
+```
+
+---
+
+## 5. 엔드포인트별 LLM 출력 위치
 
 JSON 구조가 엔드포인트마다 다르므로, **실제 모델이 생성한 텍스트를 꺼내는 위치**만 표로 정리했습니다.
 
 | 엔드포인트 | 스키마 | LLM 텍스트 경로 | SDK 편의 속성 |
 |---|---|---|---|
 | `/v1/chat/completions` | OpenAI | `choices[0].message.content` | — |
+| `/v1/chat/completions` (이미지) | OpenAI + `images` 필드 | `choices[0].message.images[0].image_url.url` (base64) | — |
 | `/v1/messages` | Anthropic | `content[0].text` | — |
 | `/v1/responses` | OpenAI Responses | `output[0].content[0].text` | `response.output_text` |
 
 ---
 
-## 5. 지원 모델
+## 6. 지원 모델
 
 현재 카탈로그에 다음 공급사의 모델이 등록되어 있습니다.
 
@@ -254,7 +339,7 @@ JSON 구조가 엔드포인트마다 다르므로, **실제 모델이 생성한 
 |---|---|
 | Anthropic | Claude 4.x 시리즈 |
 | OpenAI | GPT-5.x 시리즈 |
-| Google | Gemini 3.x 시리즈 |
+| Google | Gemini 3.x 시리즈 (이미지 생성용 `gemini-2.5-flash-image-preview`·`gemini-3-pro-image-preview` 포함) |
 | xAI (Grok) | Grok 4 시리즈 |
 | DeepSeek | V3.2, R1 |
 | Alibaba (Qwen) | Qwen 3 시리즈 |
@@ -272,7 +357,7 @@ curl https://gw.letsur.ai/v1/models \
 
 ---
 
-## 6. 응답 공통 필드
+## 7. 응답 공통 필드
 
 모든 엔드포인트 응답에 포함되는 공통/확장 필드입니다.
 
@@ -284,7 +369,7 @@ curl https://gw.letsur.ai/v1/models \
 
 ---
 
-## 7. 에러 형식
+## 8. 에러 형식
 
 에러는 **RFC 7807 Problem Details** 포맷으로 반환됩니다.
 
@@ -311,7 +396,7 @@ curl https://gw.letsur.ai/v1/models \
 
 ---
 
-## 8. 한도와 청구
+## 9. 한도와 청구
 
 - 각 키에는 Admin이 **월 사용 상한**을 설정할 수 있습니다 (키별 안전장치).
 - 초과 시 Gateway가 자동으로 요청을 차단합니다 (`429 usage_limit_exceeded`).
