@@ -65,14 +65,13 @@ Codex는 환경 변수만으로는 외부 게이트웨이에 연결되지 않습
 
 ```toml
 # 기본 프로필을 Letsur Gateway 로 설정
-model = "claude-sonnet-4-6"             # 카탈로그의 모델 코드
+model = "gpt-5"                         # 카탈로그의 responses 모드 지원 모델 코드
 model_provider = "letsur"
 
 [model_providers.letsur]
 name = "Letsur Gateway"
 base_url = "https://gw.letsur.ai/v1"    # 공식 Gateway Base URL
 env_key = "GATEWAY_API_KEY"             # 아래 2단계에서 이 이름의 환경변수에 키 저장
-wire_api = "chat"                       # Chat Completions 호환 모드
 ```
 
 ### 2. API 키 환경 변수 설정
