@@ -324,7 +324,7 @@ curl https://gw.letsur.ai/v1/models \
 - **Chat Completions** 엔드포인트 상세 스펙 — Reference 문서 참조
 - **Messages (Anthropic 호환)** 엔드포인트 상세 스펙 — Reference 문서 참조
 - **Responses API** 상세 스펙 — Reference 문서 참조
-- **Claude Code / Cursor 연동** — Integrations 가이드 참조
+- **Claude Code / Codex / Cursor 연동** — [Integrations 가이드](./integrations.md)
 - **전체 에러 카탈로그** — 에러 코드 Reference 참조
 
 > 문의: Letsur 운영팀
