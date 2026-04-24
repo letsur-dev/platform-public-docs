@@ -348,7 +348,14 @@ JSON 구조가 엔드포인트마다 다르므로, **실제 모델이 생성한 
 
 전체 모델 목록·단가·지원 엔드포인트는 **AI Gateway → 카탈로그** 탭에서 확인하세요.
 
-> 프로그램적 조회 API는 추후 보강 예정입니다.
+프로그램적으로는 `GET /v1/models` 로도 조회 가능합니다.
+
+```bash
+curl "https://gw.letsur.ai/v1/models?page_size=100" \
+  -H "Authorization: Bearer $GATEWAY_API_KEY"
+```
+
+응답에 `pagination` 필드(`total`, `page`, `page_size`, `total_pages`)가 포함됩니다. `page_size` 기본 20, 최대 100. 전체 순회는 `?page=N&page_size=100` 으로 페이지를 넘기세요.
 
 ---
 
