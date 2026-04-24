@@ -103,7 +103,7 @@ Cursor 설정에서 **Custom OpenAI endpoint** 를 사용합니다.
 
 ## 기타 OpenAI 호환 도구
 
-`OPENAI_BASE_URL` (또는 `OPENAI_API_BASE`) 을 `https://gw.letsur.ai/v1` 로, `OPENAI_API_KEY` 를 Letsur 키로 설정하면 대부분 동작합니다. LangChain, LlamaIndex, LiteLLM client, Continue.dev 등이 이 방식으로 연결 가능합니다.
+`OPENAI_BASE_URL` (또는 `OPENAI_API_BASE`) 을 `https://gw.letsur.ai/v1` 로, `OPENAI_API_KEY` 를 Letsur 키로 설정하면 대부분 동작합니다. LangChain, LlamaIndex 등이 이 방식으로 연결 가능합니다.
 
 ---
 

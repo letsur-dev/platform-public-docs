@@ -179,7 +179,7 @@ LLM이 생성한 텍스트는 **`content[0].text`** 에 있습니다.
 
 ## 3. OpenAI Responses API
 
-`POST /v1/responses` — OpenAI의 최신 API. 단일 호출 내 **내장 도구(web search, code interpreter 등)** 사용과 **상태 있는 대화**를 지원합니다. 카탈로그에서 **`mode=responses`** 로 표시된 모델에서 사용 가능합니다.
+`POST /v1/responses` — OpenAI의 최신 API. 단일 호출 내 **내장 도구(web search, code interpreter 등)** 사용과 **상태 있는 대화**를 지원합니다. 카탈로그에서 **`responses`** 로 표시된 모델에서 사용 가능합니다.
 
 ### Python (OpenAI SDK)
 
@@ -236,7 +236,7 @@ LLM이 생성한 텍스트는 **`output[0].content[0].text`** 에 있습니다. 
 
 ## 4. 이미지 생성 (나노바나나)
 
-Google Gemini 이미지 생성 모델(`gemini-2.5-flash-image-preview`, `gemini-3-pro-image-preview`)은 **같은 `/v1/chat/completions` 엔드포인트** 로 호출합니다. 모델 코드만 바꾸면 됩니다.
+Google Gemini 이미지 생성 모델(`gemini-2.5-flash-image`, `gemini-3-pro-image-preview`, `gemini-3.1-flash-image-preview`)은 **같은 `/v1/chat/completions` 엔드포인트** 로 호출합니다. 모델 코드만 바꾸면 됩니다.
 
 > `gemini-3-pro-image-preview` 는 공급사(Google) 측 불안정성이 있을 수 있으니 참고하세요.
 
@@ -402,16 +402,8 @@ curl "https://gw.letsur.ai/v1/models?page_size=100" \
 
 - 각 키에는 Admin이 **월 사용 상한**을 설정할 수 있습니다 (키별 안전장치).
 - 초과 시 Gateway가 자동으로 요청을 차단합니다 (`429 usage_limit_exceeded`).
-- 실제 청구는 Letsur와의 **외부 정산** 기준입니다. `estimated_cost` 는 참고값입니다.
+- 실제 청구는 Letsur Platform **DB** 기준입니다. `estimated_cost` 는 참고값이며, 정확하지 않을 수 있습니다.
 
 ---
-
-## 다음 단계
-
-- **Chat Completions** 엔드포인트 상세 스펙 — Reference 문서 참조
-- **Messages (Anthropic 호환)** 엔드포인트 상세 스펙 — Reference 문서 참조
-- **Responses API** 상세 스펙 — Reference 문서 참조
-- **Claude Code / Codex / Cursor 연동** — [Integrations 가이드](./integrations.md)
-- **전체 에러 카탈로그** — 에러 코드 Reference 참조
 
 > 문의: Letsur 운영팀
