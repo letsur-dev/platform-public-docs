@@ -90,17 +90,6 @@ codex "이 함수를 리팩토링해줘"
 
 > `env_key` 에는 **환경변수 이름** 을 적습니다(키 값 자체가 아닙니다). 실제 API 키는 2단계처럼 환경변수로 export 하세요.
 
-## Cursor
-
-Cursor 설정에서 **Custom OpenAI endpoint** 를 사용합니다.
-
-1. **Settings → Models** 열기
-2. **OpenAI API Key** 에 Letsur에서 발급받은 키 입력
-3. **Custom OpenAI API Base URL** 을 `https://gw.letsur.ai/v1` 로 설정
-4. 사용할 모델 코드(예: `claude-sonnet-4-6`)를 모델 목록에 추가
-
-> Cursor의 일부 내장 기능(자동완성 등)은 Custom endpoint 로 전환되지 않을 수 있습니다. 외부 모델 호출 시에만 Letsur Gateway가 사용됩니다.
-
 ## 기타 OpenAI 호환 도구
 
 `OPENAI_BASE_URL` (또는 `OPENAI_API_BASE`) 을 `https://gw.letsur.ai/v1` 로, `OPENAI_API_KEY` 를 Letsur 키로 설정하면 대부분 동작합니다. LangChain, LlamaIndex 등이 이 방식으로 연결 가능합니다.
