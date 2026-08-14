@@ -12,7 +12,7 @@
 
 | 업체명 | 위탁 업무 | 이전 국가 | 이전 항목 | 보유 기간 |
 |---|---|---|---|---|
-| Amazon Web Services, Inc. | 클라우드 인프라 운영 (컴퓨팅·스토리지·DB·이메일 발송 등) | 대한민국(서울 리전) 기본, 재해복구(DR)·가용성 확보 목적으로 일본(도쿄 리전) 등 다른 리전으로 일시 이전될 수 있음 | 서비스 운영 데이터 전체 | 위탁 계약 종료 시 |
+| Amazon Web Services, Inc. | 클라우드 인프라 운영 (컴퓨팅, 스토리지, DB, 이메일 발송 등) | 대한민국(서울 리전) 기본, 재해복구(DR) 및 가용성 확보 목적으로 일본(도쿄 리전) 등 다른 리전으로 일시 이전될 수 있음 | 서비스 운영 데이터 전체 | 위탁 계약 종료 시 |
 | Vercel, Inc. | 프론트엔드 호스팅 | 미국 | 접속 기록, 기술 정보 | 위탁 계약 종료 시 |
 
 ## 결제
@@ -29,13 +29,13 @@
 |---|---|---|---|---|
 | Anthropic PBC | AI 모델 API 처리 (Claude) | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 | OpenAI OpCo, LLC | AI 모델 API 처리 (GPT) | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
-| Google LLC | AI 모델·영상 생성 API 처리 (Gemini API — Gemini, Veo 등) | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
+| Google LLC | AI 모델 API 및 영상 생성 API 처리 (Gemini API — Gemini, Veo 등) | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 | Amazon Web Services, Inc. | AI 모델 API 처리 (Bedrock) | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 | Microsoft Corporation | AI 모델 API 처리 (Azure OpenAI) | 미국 등 여러 국가 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 | OpenRouter, Inc. | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 | Vercel, Inc. (AI Gateway) | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 
-각 제공업체의 이용 정책(Acceptable Use Policy): [Anthropic](https://www.anthropic.com/legal/aup) · [OpenAI](https://openai.com/policies/usage-policies/) · [Google](https://policies.google.com/terms/generative-ai/use-policy)
+각 제공업체의 이용 정책(Acceptable Use Policy): [Anthropic](https://www.anthropic.com/legal/aup), [OpenAI](https://openai.com/policies/usage-policies/), [Google](https://policies.google.com/terms/generative-ai/use-policy)
 
 회사는 요청 데이터가 사용자 식별 없이 처리되고, 통상적으로 최대 30일 이내에 파기되거나 AI 모델 학습 등에 이용되지 않는 조건으로 운영되는 업체를 우선하여 이용합니다.
 
@@ -43,7 +43,7 @@
 
 | 업체명 | 위탁 업무 | 이전 국가 | 이전 항목 | 보유 기간 |
 |---|---|---|---|---|
-| Slack Technologies, LLC | 고객 문의 접수 및 내부 알림 | 미국 | 문의자 정보(이름, 회사명, 기업 유형, 부서·직함, 이메일, 연락처), 문의 내용, 유입 정보 | 위탁 계약 종료 시 |
+| Slack Technologies, LLC | 고객 문의 접수 및 내부 알림 | 미국 | 문의자 정보(이름, 회사명, 기업 유형, 부서, 직함, 이메일, 연락처), 문의 내용, 유입 정보 | 위탁 계약 종료 시 |
 
 ---
 
@@ -52,5 +52,5 @@
 | 날짜 | 변경 내용 |
 |---|---|
 | 2026-04-23 | 최초 게시 |
-| 2026-07-23 | 결제 수탁 항목·이전 정보 상세화, AI 제공업체 이용정책(AUP) 링크 추가 |
+| 2026-07-23 | 결제 수탁 항목과 이전 정보 상세화, AI 제공업체 이용정책(AUP) 링크 추가 |
 | 2026-07-27 | 문의 폼 도입에 따른 고객 응대 도구 제공업체 추가 |
