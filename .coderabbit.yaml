@@ -1,0 +1,13 @@
+# CodeRabbit automation is disabled for this repository.
+enable_free_tier: false
+reviews:
+  high_level_summary: false
+  review_status: false
+  in_progress_fortune: false
+  auto_review:
+    enabled: false
+    auto_incremental_review: false
+    labels: []
+    description_keyword: ""
+chat:
+  auto_reply: false
