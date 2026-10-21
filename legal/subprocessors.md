@@ -48,9 +48,9 @@
 | Vercel, Inc. (AI Gateway) | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 | fal | 생성 API 실행 및 미디어 파일 전달 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://fal.ai/legal/data-processing-addendum) 및 계약 조건에 따름 |
 | Tencent Cloud TokenHub | AI 모델 API 실행 및 중개 | 싱가포르(이용 리전) | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://www.tencentcloud.com/document/product/1300/78953) 및 계약 조건에 따름 |
-| BytePlus ModelArk | 이미지 및 영상 등 미디어 생성 API 처리 | 렛서 이용 계정의 적용 국가 확인 중. 공개 정책상 안전 필터 보관 국가는 말레이시아 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://docs.byteplus.com/zh-TW/docs/ModelArk/BytePlus_ModelArk_Data_Processing) 및 계약 조건에 따름 |
-| Z.AI API | AI 모델 API 처리 | 공개 API DPA는 일반 처리 국가를 싱가포르로 안내. 렛서 계정 적용 범위 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://chat.z.ai/legal-agreement/privacy-policy) 및 계약 조건에 따름 |
-| FriendliAI | AI 모델 추론 API 처리 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://friendli.ai/dpa) 및 계약 조건에 따름 |
+| BytePlus ModelArk | 이미지 및 영상 등 미디어 생성 API 처리 | 말레이시아(직접 연결 [AP 리전](https://docs.byteplus.com/en/docs/modelark/region-availability), ap-southeast-1). 추가 처리 범위는 상품별 정책에 따름 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://docs.byteplus.com/zh-TW/docs/ModelArk/BytePlus_ModelArk_Data_Processing) 및 계약 조건에 따름 |
+| Z.AI API | AI 모델 API 처리 | 싱가포르 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://chat.z.ai/legal-agreement/privacy-policy) 및 계약 조건에 따름 |
+| FriendliAI | AI 모델 추론 API 처리 | 미국 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://friendli.ai/dpa) 및 계약 조건에 따름 |
 
 외부 업체가 수행하는 데이터 보관, 학습, 개선 및 평가를 위한 이용, 삭제에는 해당 업체의 적용 상품 정책과 계약 조건이 적용됩니다. 렛서 자체의 저장 및 이용 제한 설정만으로 외부 업체의 보관 및 이용 조건이 변경되는 것은 아닙니다. 회사가 법령과 계약에 따라 부담하는 위탁 관리와 개인정보 보호 의무는 유지됩니다.
 
