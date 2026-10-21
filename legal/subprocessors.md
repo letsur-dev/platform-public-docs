@@ -46,13 +46,13 @@
 | Microsoft Corporation | AI 모델 API 처리 (Azure OpenAI) | 미국 등 여러 국가 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 | OpenRouter, Inc. | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 | Vercel, Inc. (AI Gateway) | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
-| fal | 생성 API 실행 및 미디어 파일 전달 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | [공개 보관 정책](https://fal.ai/docs/documentation/model-apis/media-expiration)의 요청 이력 기본값은 90일이며 미디어 파일은 별도 조건 적용. 실제 계정 설정은 확인 중. [DPA](https://fal.ai/legal/data-processing-addendum) |
-| Tencent Cloud TokenHub | AI 모델 API 실행 및 중개 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | 선택 리전과 ZDR 설정에 따라 다름. 실제 계정 설정은 확인 중. [상품별 처리 조건](https://www.tencentcloud.com/document/product/1300/78953) |
-| BytePlus ModelArk | 이미지 및 영상 등 미디어 생성 API 처리 | 렛서 이용 계정의 적용 국가 확인 중. 공개 정책상 안전 필터 보관 국가는 말레이시아 | 선택한 기능 실행에 필요한 요청 데이터 | [공개 처리 정책](https://docs.byteplus.com/zh-TW/docs/ModelArk/BytePlus_ModelArk_Data_Processing)상 안전 필터가 탐지한 입출력은 180일. 그 밖의 자료와 실제 계정 적용 조건은 확인 중 |
-| Z.AI API | AI 모델 API 처리 | 공개 API DPA는 일반 처리 국가를 싱가포르로 안내. 렛서 계정 적용 범위 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | [API DPA](https://chat.z.ai/legal-agreement/privacy-policy)상 입출력 콘텐츠 미저장. 기타 고객 데이터는 별도 조건이며 실제 계정 적용 범위는 확인 중 |
-| FriendliAI | AI 모델 추론 API 처리 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | [공개 정책](https://learn.friendli.ai/articles/7463982206-zero-data-retention)상 기본 ZDR. Dedicated Endpoints는 콘텐츠 로그 선택 가능. 실제 계정 설정은 확인 중 |
+| fal | 생성 API 실행 및 미디어 파일 전달 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://fal.ai/legal/data-processing-addendum) 및 계약 조건에 따름 |
+| Tencent Cloud TokenHub | AI 모델 API 실행 및 중개 | 싱가포르(이용 리전) | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://www.tencentcloud.com/document/product/1300/78953) 및 계약 조건에 따름 |
+| BytePlus ModelArk | 이미지 및 영상 등 미디어 생성 API 처리 | 렛서 이용 계정의 적용 국가 확인 중. 공개 정책상 안전 필터 보관 국가는 말레이시아 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://docs.byteplus.com/zh-TW/docs/ModelArk/BytePlus_ModelArk_Data_Processing) 및 계약 조건에 따름 |
+| Z.AI API | AI 모델 API 처리 | 공개 API DPA는 일반 처리 국가를 싱가포르로 안내. 렛서 계정 적용 범위 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://chat.z.ai/legal-agreement/privacy-policy) 및 계약 조건에 따름 |
+| FriendliAI | AI 모델 추론 API 처리 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://friendli.ai/dpa) 및 계약 조건에 따름 |
 
-외부 업체가 수행하는 데이터 보관, 학습, 개선 및 평가를 위한 이용, 삭제에는 해당 업체의 적용 상품 정책과 계약 조건이 적용됩니다. 렛서의 저장 및 이용 제한 설정은 외부 업체의 조건을 변경하지 않습니다. 회사가 법령과 계약에 따라 부담하는 위탁 관리와 개인정보 보호 의무는 유지됩니다.
+외부 업체가 수행하는 데이터 보관, 학습, 개선 및 평가를 위한 이용, 삭제에는 해당 업체의 적용 상품 정책과 계약 조건이 적용됩니다. 렛서 자체의 저장 및 이용 제한 설정만으로 외부 업체의 보관 및 이용 조건이 변경되는 것은 아닙니다. 회사가 법령과 계약에 따라 부담하는 위탁 관리와 개인정보 보호 의무는 유지됩니다.
 
 각 제공업체의 이용 정책(Acceptable Use Policy): [Anthropic](https://www.anthropic.com/legal/aup), [OpenAI](https://openai.com/policies/usage-policies/), [Google](https://policies.google.com/terms/generative-ai/use-policy)
 
