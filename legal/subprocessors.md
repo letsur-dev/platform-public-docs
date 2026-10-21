@@ -2,18 +2,13 @@
 
 최종 업데이트: 2026년 07월 27일
 
-주식회사 렛서(이하 "회사")는 서비스 제공을 위해 아래와 같이 사용자의 데이터 처리를 외부 업체에 위탁하고 있습니다. 본 현황은 회사의 [개인정보 처리방침](https://platform.letsur.ai/privacy) 제5조 및 제6조에 연결된 공식 부속 고지입니다. 기능 사용 방법이 아닌 외부 업체별 처리 업무와 조건을 안내합니다.
+주식회사 렛서(이하 "회사")는 서비스 제공을 위해 아래 업체에 데이터 처리를 위탁합니다. 본 현황은 [개인정보 처리방침](https://platform.letsur.ai/privacy) 제5조 및 제6조에 연결된 공식 부속 고지입니다. 업체가 추가되거나 변경되면 본 페이지에 지체 없이 반영하고 사용자에게 고지합니다. 개별 계약에서 정한 사전 동의 절차는 별도로 따릅니다.
 
-위탁 대상 업체가 추가되거나 변경되는 경우, 본 페이지에 지체 없이 반영하고 사용자에게 고지합니다.
+표의 “이전 항목”은 실제 이용하는 기능과 상품을 제공하기 위해 회사가 해당 업체에 전달하는 자료입니다. “요청 데이터”는 입력 자료와 실행 옵션, “사용량 데이터”는 본문을 제외한 호출 건수와 토큰 수 등 이용량 정보입니다. AI 산출물도 다음 요청의 입력이나 파일 보관 대상이 되면 이전 항목에 포함될 수 있습니다. 자세한 정의는 [개인정보 처리방침 제4조](https://platform.letsur.ai/privacy)를 따르며, 원문 없는 운영 정보도 개인이나 계정과 연결되면 개인정보로 처리합니다.
 
-렛서 자체의 콘텐츠 이용 및 보관 조건은 [이용약관 제13조 및 별표 1](https://platform.letsur.ai/terms), 개인정보의 보관, 접근 및 삭제는 [개인정보 처리방침](https://platform.letsur.ai/privacy)을 따릅니다. 렛서의 저장 제한은 외부 업체의 미보관을 뜻하지 않습니다.
+렛서 자체의 콘텐츠 이용 및 보관 조건은 [이용약관 제13조 및 별표 1](https://platform.letsur.ai/terms), 개인정보의 보관, 접근 및 삭제는 [개인정보 처리방침](https://platform.letsur.ai/privacy)을 따릅니다. 외부 업체의 보관, 학습, 개선 및 평가 목적의 이용 및 삭제에는 해당 상품의 정책과 계약 조건이 적용됩니다. 렛서의 저장 및 이용 제한 설정이 외부 업체의 처리 조건을 변경하지는 않으며, 회사의 법령 및 계약상 위탁 관리와 개인정보 보호 의무는 유지됩니다.
 
-표의 “이전 항목”은 회사가 해당 업체로 전달하는 자료입니다. “요청 데이터”는 입력 자료와 실행 옵션, “사용량 데이터”는 본문을 제외한 호출 건수와 토큰 수 등 이용량 정보이며, 자세한 뜻은 [개인정보 처리방침 제4조](https://platform.letsur.ai/privacy)를 따릅니다. AI 산출물도 다음 요청에 입력하거나 파일 보관을 맡기면 이전 항목에 포함될 수 있습니다. 업체가 새로 생성하는 결과의 이용 및 보관 조건은 해당 상품별로 확인해야 합니다.
-
-인프라 호스팅, 직접 AI 처리와 API 중개는 역할이 다릅니다. 표의 항목은 실제 이용하는 기능과 상품의 범위에서 적용하며, 모든 업체가 같은 자료를 받거나 같은 기간 보관한다는 뜻은 아닙니다. 이 설명은 새로운 이용 및 보관 권한이나 기간을 부여하지 않습니다. 원문 없는 운영 정보도 개인이나 계정과 연결되면 개인정보로 처리합니다. 개별 계약에서 정한 업체 추가 또는 처리 범위 변경의 사전 동의는 이 현황의 갱신으로 대체하지 않습니다.
-
-표의 “위탁 계약 종료 시”는 위탁 관계가 종료되는 경우의 처리 기한을 뜻하며, 모든 자료를 그때까지 보관할 수 있다는 의미는 아닙니다. 회사는 개인정보 처리방침의 자료별 목적과 보관 기간 및 유효한 삭제 요청에 따라 수탁업체의 처리 범위를 관리합니다.
-
+표의 “위탁 계약 종료 시”는 위탁 관계 종료에 따른 처리 기한이며, 모든 자료를 그때까지 보관한다는 뜻은 아닙니다. 회사는 개인정보 처리방침의 자료별 목적과 보관 기간 및 유효한 삭제 요청에 따라 수탁업체의 처리 범위를 관리합니다.
 
 ---
 
@@ -23,7 +18,7 @@
 |---|---|---|---|---|
 | Amazon Web Services, Inc. | 클라우드 인프라 운영 (컴퓨팅, 스토리지, DB, 이메일 발송 등) | 대한민국(서울 리전) 기본, 재해복구(DR) 및 가용성 확보 목적으로 일본(도쿄 리전) 등 다른 리전으로 일시 이전될 수 있음 | 계정 정보, 회사가 보관하는 결제수단 정보와 거래 기록, 운영 기록 및 선택한 기능의 사용자 자료와 AI 산출물 | 위탁 계약 종료 시 |
 | Vercel, Inc. | 프론트엔드 호스팅 | 미국 | 접속 기록, 기술 정보 | 위탁 계약 종료 시 |
-| Datadog | 서비스 운영 모니터링 및 장애 분석 | 미국(US 리전) | 서비스 운영 모니터링 정보. 사용자 프롬프트 및 출력은 전송하지 않음 | 이용 중인 상품의 보관 설정에 따름. 적용 기간은 아래 문의 창구에서 확인 가능 |
+| Datadog | 서비스 운영 모니터링 및 장애 분석 | 미국(US 리전) | 서비스 운영 모니터링 정보. 사용자 프롬프트 및 출력은 전송하지 않음 | 이용 중인 상품의 보관 설정에 따름 |
 
 ## 결제
 
@@ -37,25 +32,19 @@
 
 직접 AI 처리를 수행하는 업체와 API 중개 업체를 함께 안내합니다.
 
-| 업체명 | 위탁 업무 | 이전 국가 | 이전 항목 | 보유 기간 |
+| 업체명 | 위탁 업무 | 이전 국가 | 이전 항목 | 보유 기간 및 관련 정책 |
 |---|---|---|---|---|
-| Anthropic PBC | AI 모델 API 처리 (Claude) | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
-| OpenAI OpCo, LLC | AI 모델 API 처리 (GPT) | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
-| Google LLC | AI 모델 API 및 영상 생성 API 처리 (Gemini API: Gemini, Veo 등) | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
-| Amazon Web Services, Inc. | AI 모델 API 처리 (Bedrock) | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
-| Microsoft Corporation | AI 모델 API 처리 (Azure OpenAI) | 미국 등 여러 국가 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
-| OpenRouter, Inc. | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
-| Vercel, Inc. (AI Gateway) | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
-| Tencent Cloud TokenHub | AI 모델 API 실행 및 중개 | 싱가포르(이용 리전) | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://www.tencentcloud.com/document/product/1300/78953) 및 계약 조건에 따름 |
-| BytePlus ModelArk | 이미지 및 영상 등 미디어 생성 API 처리 | 말레이시아(직접 연결 [AP 리전](https://docs.byteplus.com/en/docs/modelark/region-availability), ap-southeast-1). 추가 처리 범위는 상품별 정책에 따름 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://docs.byteplus.com/zh-TW/docs/ModelArk/BytePlus_ModelArk_Data_Processing) 및 계약 조건에 따름 |
-| Z.AI API | AI 모델 API 처리 | 싱가포르 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://chat.z.ai/legal-agreement/privacy-policy) 및 계약 조건에 따름 |
-| FriendliAI | AI 모델 추론 API 처리 | 미국 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://friendli.ai/dpa) 및 계약 조건에 따름 |
-
-외부 업체가 수행하는 데이터 보관, 학습, 개선 및 평가를 위한 이용, 삭제에는 해당 업체의 적용 상품 정책과 계약 조건이 적용됩니다. 렛서 자체의 저장 및 이용 제한 설정만으로 외부 업체의 보관 및 이용 조건이 변경되는 것은 아닙니다. 회사가 법령과 계약에 따라 부담하는 위탁 관리와 개인정보 보호 의무는 유지됩니다.
-
-각 제공업체의 이용 정책(Acceptable Use Policy): [Anthropic](https://www.anthropic.com/legal/aup), [OpenAI](https://openai.com/policies/usage-policies/), [Google](https://policies.google.com/terms/generative-ai/use-policy)
-
-업체별 적용 국가, 보관 및 이용 조건은 플랫폼 내 문의 기능 또는 [도입 문의](https://platform.letsur.ai/contact)에서 확인을 요청할 수 있습니다. 요청 원문, 개인정보와 API 키는 보내지 마세요.
+| Anthropic PBC | AI 모델 API 처리 (Claude) | 미국 | 요청 데이터, 사용량 데이터 | [데이터 처리 약정](https://www.anthropic.com/legal/data-processing-addendum) / [이용 정책(AUP)](https://www.anthropic.com/legal/aup) |
+| OpenAI OpCo, LLC | AI 모델 API 처리 (GPT) | 미국 | 요청 데이터, 사용량 데이터 | [데이터 처리 약정](https://openai.com/policies/data-processing-addendum/) / [이용 정책(AUP)](https://openai.com/policies/usage-policies/) |
+| Google LLC | AI 모델 API 및 영상 생성 API 처리 (Gemini API: Gemini, Veo 등) | 미국 | 요청 데이터, 사용량 데이터 | [API 약관의 데이터 처리 조건](https://ai.google.dev/gemini-api/terms) / [이용 정책(AUP)](https://policies.google.com/terms/generative-ai/use-policy) |
+| Amazon Web Services, Inc. | AI 모델 API 처리 (Bedrock) | 미국 | 요청 데이터, 사용량 데이터 | [데이터 보호 안내](https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html) |
+| Microsoft Corporation | AI 모델 API 처리 (Azure OpenAI) | 미국 등 여러 국가 | 요청 데이터, 사용량 데이터 | [데이터 처리 안내](https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/data-privacy) |
+| OpenRouter, Inc. | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | [데이터 수집 안내](https://openrouter.ai/docs/guides/privacy/data-collection) |
+| Vercel, Inc. (AI Gateway) | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | [AI 상품 약관](https://vercel.com/legal/ai-product-terms) |
+| Tencent Cloud TokenHub | AI 모델 API 실행 및 중개 | 싱가포르(이용 리전) | 요청 데이터 | [데이터 처리 정책](https://www.tencentcloud.com/document/product/1300/78953) |
+| BytePlus ModelArk | 이미지 및 영상 등 미디어 생성 API 처리 | 말레이시아(직접 연결 [AP 리전](https://docs.byteplus.com/en/docs/modelark/region-availability), ap-southeast-1). 추가 처리 범위는 상품별 정책에 따름 | 요청 데이터 | [데이터 처리 정책](https://docs.byteplus.com/zh-TW/docs/ModelArk/BytePlus_ModelArk_Data_Processing) |
+| Z.AI API | AI 모델 API 처리 | 싱가포르 | 요청 데이터 | [API 데이터 처리 약정(페이지 하단)](https://chat.z.ai/legal-agreement/privacy-policy) |
+| FriendliAI | AI 모델 추론 API 처리 | 미국 | 요청 데이터 | [데이터 처리 정책](https://friendli.ai/dpa) |
 
 ## 기타 기술 제공자
 
