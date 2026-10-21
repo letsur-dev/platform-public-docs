@@ -46,7 +46,6 @@
 | Microsoft Corporation | AI 모델 API 처리 (Azure OpenAI) | 미국 등 여러 국가 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 | OpenRouter, Inc. | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 | Vercel, Inc. (AI Gateway) | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
-| fal | 생성 API 실행 및 미디어 파일 전달 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://fal.ai/legal/data-processing-addendum) 및 계약 조건에 따름 |
 | Tencent Cloud TokenHub | AI 모델 API 실행 및 중개 | 싱가포르(이용 리전) | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://www.tencentcloud.com/document/product/1300/78953) 및 계약 조건에 따름 |
 | BytePlus ModelArk | 이미지 및 영상 등 미디어 생성 API 처리 | 말레이시아(직접 연결 [AP 리전](https://docs.byteplus.com/en/docs/modelark/region-availability), ap-southeast-1). 추가 처리 범위는 상품별 정책에 따름 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://docs.byteplus.com/zh-TW/docs/ModelArk/BytePlus_ModelArk_Data_Processing) 및 계약 조건에 따름 |
 | Z.AI API | AI 모델 API 처리 | 싱가포르 | 선택한 기능 실행에 필요한 요청 데이터 | 해당 상품의 [데이터 처리 정책](https://chat.z.ai/legal-agreement/privacy-policy) 및 계약 조건에 따름 |
