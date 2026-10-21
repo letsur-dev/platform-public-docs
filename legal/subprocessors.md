@@ -46,31 +46,17 @@
 | Microsoft Corporation | AI 모델 API 처리 (Azure OpenAI) | 미국 등 여러 국가 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 | OpenRouter, Inc. | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
 | Vercel, Inc. (AI Gateway) | AI 모델 API 라우팅 처리 | 미국 | 요청 데이터, 사용량 데이터 | 각 사 데이터 처리 정책에 따름 |
-| fal (Features & Labels, Inc.) | 생성 API 실행 및 미디어 파일 전달 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | 요청 이력과 미디어 파일의 보관 조건이 다름. 아래 상품 조건 참조 |
-| Tencent Cloud TokenHub | AI 모델 API 실행 및 중개 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | 선택 리전과 ZDR 설정에 따라 다름. 아래 상품 조건 참조 |
-| BytePlus ModelArk | 이미지 및 영상 등 미디어 생성 API 처리 | 렛서 이용 계정의 적용 국가 확인 중. 공개 정책의 안전 필터 보관 국가는 말레이시아 | 선택한 기능 실행에 필요한 요청 데이터 | 안전 필터가 탐지한 자료는 공개 정책상 180일. 그 밖의 자료는 상품별 조건 적용 |
-| Z.AI API | AI 모델 API 처리 | API DPA는 일반 처리 국가를 싱가포르로 안내. 렛서 계정의 적용 범위 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | API DPA는 입출력 콘텐츠 미저장 명시. 그 밖의 고객 데이터는 별도 조건 적용 |
-| FriendliAI (FriendliAI Corp.) | AI 모델 추론 API 처리 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | 기본 ZDR. Dedicated Endpoints의 콘텐츠 로그 선택 여부에 따라 다름 |
+| fal | 생성 API 실행 및 미디어 파일 전달 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | [공개 보관 정책](https://fal.ai/docs/documentation/model-apis/media-expiration)의 요청 이력 기본값은 90일이며 미디어 파일은 별도 조건 적용. 실제 계정 설정은 확인 중. [DPA](https://fal.ai/legal/data-processing-addendum) |
+| Tencent Cloud TokenHub | AI 모델 API 실행 및 중개 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | 선택 리전과 ZDR 설정에 따라 다름. 실제 계정 설정은 확인 중. [상품별 처리 조건](https://www.tencentcloud.com/document/product/1300/78953) |
+| BytePlus ModelArk | 이미지 및 영상 등 미디어 생성 API 처리 | 렛서 이용 계정의 적용 국가 확인 중. 공개 정책상 안전 필터 보관 국가는 말레이시아 | 선택한 기능 실행에 필요한 요청 데이터 | [공개 처리 정책](https://docs.byteplus.com/zh-TW/docs/ModelArk/BytePlus_ModelArk_Data_Processing)상 안전 필터가 탐지한 입출력은 180일. 그 밖의 자료와 실제 계정 적용 조건은 확인 중 |
+| Z.AI API | AI 모델 API 처리 | 공개 API DPA는 일반 처리 국가를 싱가포르로 안내. 렛서 계정 적용 범위 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | [API DPA](https://chat.z.ai/legal-agreement/privacy-policy)상 입출력 콘텐츠 미저장. 기타 고객 데이터는 별도 조건이며 실제 계정 적용 범위는 확인 중 |
+| FriendliAI | AI 모델 추론 API 처리 | 렛서 이용 계정의 적용 국가 확인 중 | 선택한 기능 실행에 필요한 요청 데이터 | [공개 정책](https://learn.friendli.ai/articles/7463982206-zero-data-retention)상 기본 ZDR. Dedicated Endpoints는 콘텐츠 로그 선택 가능. 실제 계정 설정은 확인 중 |
 
-**추가 업체의 상품별 처리 조건**
-
-위 5개 업체는 현재 고객 요청 처리에 이용하고 있습니다. 업체명은 이용 상품과 공개 사업자 명칭을 함께 표시한 것이며, 렛서 계정에 적용되는 계약 법인과 국가 및 보관 설정은 확인된 범위에서 구분하여 안내합니다. “확인 중”인 항목은 특정 국가, 기간이나 미보관을 보장하는 뜻이 아닙니다.
-
-| 업체 및 상품 | 업체가 공개한 조건 | 렛서 이용 조건에서 추가 확인할 항목 |
-|---|---|---|
-| fal | [요청 이력은 기본 90일](https://fal.ai/docs/documentation/model-apis/media-expiration)이며, 이력 저장과 CDN 미디어 파일의 보관은 별개입니다. [DPA](https://fal.ai/legal/data-processing-addendum)는 비식별 데이터의 서비스 개선 이용을 허용합니다. | 실제 계약 법인, 처리 국가, 요청 이력 저장 설정과 미디어 보관 설정 |
-| Tencent Cloud TokenHub | [ZDR 미활성 시 작업 요청 후 통상 최대 30일](https://www.tencentcloud.com/document/product/1300/78953) 보관합니다. 지정된 싱가포르, 프랑크푸르트, 실리콘밸리 리전 선택과 ZDR 활성 조건에서 콘텐츠 미보관을 안내합니다. 법적 의무 등 별도 예외가 있습니다. | 계정 등록 국가에 따른 계약 법인, 선택 리전, ZDR 설정과 부가 로그 조건 |
-| BytePlus ModelArk | [안전 필터가 탐지한 입출력은 말레이시아에서 180일 보관](https://docs.byteplus.com/zh-TW/docs/ModelArk/BytePlus_ModelArk_Data_Processing)한다고 안내합니다. 이 조건을 모든 자료의 공통 보관 기간으로 적용하지 않습니다. | 실제 계약 법인, 일반 처리 국가 및 자료별 적용 조건 |
-| Z.AI API | [페이지 하단의 API DPA](https://chat.z.ai/legal-agreement/privacy-policy)는 입출력 콘텐츠를 실시간 처리하고 저장하지 않는다고 명시합니다. 그 밖의 고객 데이터는 서비스 제공 또는 법적 의무에 따른 별도 보관 조건이 있습니다. | 실제 계약 법인, API 상품 적용 범위와 처리 국가 |
-| FriendliAI | [기본 ZDR](https://learn.friendli.ai/articles/7463982206-zero-data-retention)을 안내하며, Dedicated Endpoints에서는 콘텐츠 로그 저장을 선택할 수 있습니다. | 실제 계약 법인, 상품 종류, 처리 리전 및 콘텐츠 로그 설정 |
-
-공개 상품조건은 렛서 계정의 실제 설정이나 모든 하위 처리자의 조건을 확인한 결과가 아닙니다. 렛서의 고객 콘텐츠 재사용 금지를 외부 업체 전체의 학습, 개선 및 평가 미사용 보장으로 확대하지 않습니다.
+외부 업체가 수행하는 데이터 보관, 학습, 개선 및 평가를 위한 이용, 삭제에는 해당 업체의 적용 상품 정책과 계약 조건이 적용됩니다. 렛서의 저장 및 이용 제한 설정은 외부 업체의 조건을 변경하지 않습니다. 회사가 법령과 계약에 따라 부담하는 위탁 관리와 개인정보 보호 의무는 유지됩니다.
 
 각 제공업체의 이용 정책(Acceptable Use Policy): [Anthropic](https://www.anthropic.com/legal/aup), [OpenAI](https://openai.com/policies/usage-policies/), [Google](https://policies.google.com/terms/generative-ai/use-policy)
 
-개인정보 처리방침 제4조의 선정 검토 기준은 요청 데이터의 자체 AI 모델 학습 미사용과 통상 30일 이내 파기 조건입니다. 위 표에는 이 기준과 별도로 실제 이용 업체의 공개 상품조건을 표시했습니다. 30일을 초과하는 보관 조건이 있는 상품을 포함하므로, 업체가 목록에 있다는 이유만으로 해당 기준의 충족이나 미보관을 보장하지 않습니다.
-
-특정 모델이나 도구에 적용되는 처리 국가, 보관 기간, 학습 및 개선 또는 평가 이용 조건은 해당 상품의 적용 범위로 확인해야 합니다. 기존 고객은 로그인 후 플랫폼 내 문의 기능에 모델 또는 도구와 확인할 조건을 남겨 주세요. 신규 도입을 검토하는 경우 [도입 문의](https://platform.letsur.ai/contact)를 이용할 수 있습니다. 요청 원문, 개인정보와 API 키는 문의에 포함하지 마세요.
+업체별 적용 국가, 보관 및 이용 조건은 플랫폼 내 문의 기능 또는 [도입 문의](https://platform.letsur.ai/contact)에서 확인을 요청할 수 있습니다. 요청 원문, 개인정보와 API 키는 보내지 마세요.
 
 ## 기타 기술 제공자
 
